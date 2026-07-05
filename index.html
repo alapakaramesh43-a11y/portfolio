@@ -3,12 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Alapaka Venkata Ramesh — Full Stack Developer & CSE Undergraduate. Portfolio showcasing backend development skills, projects, and experience." />
-  <title>Alapaka Venkata Ramesh | Full Stack Developer</title>
+  <meta name="description" content="Alapaka Venkata Ramesh — Computer Science Engineering Student &amp; Full Stack Developer. Portfolio showcasing Java, SQL, Python, web development projects, and experience." />
+  <title>Alapaka Venkata Ramesh | Portfolio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@0.484.0/dist/umd/lucide.min.js"></script>
 </head>
 <body>
 
@@ -22,6 +24,7 @@
         <li><a href="#experience" class="nav-link">Experience</a></li>
         <li><a href="#projects" class="nav-link">Projects</a></li>
         <li><a href="#education" class="nav-link">Education</a></li>
+        <li><a href="#certifications" class="nav-link">Certifications</a></li>
         <li><a href="#contact" class="nav-link">Contact</a></li>
       </ul>
       <a href="mailto:alapakaramesh43@gmail.com" class="nav-cta">Hire Me</a>
@@ -38,34 +41,61 @@
     <div class="hero-glow glow-2"></div>
     <div class="hero-glow glow-3"></div>
 
-    <div class="hero-content" data-aos="fade-up">
-      <div class="hero-badge">👋 Available for Opportunities</div>
-      <h1 class="hero-name">
-        Alapaka<br />
-        <span class="hero-name-accent">Venkata Ramesh</span>
-      </h1>
-      <div class="hero-role">
-        <span class="role-prefix">I'm a </span>
-        <span class="typewriter" id="typewriter"></span>
+    <div class="container hero-container" data-aos="fade-up">
+      <!-- Top: Hero Image (Cartoon Illustration) -->
+      <div class="hero-image-content">
+        <div class="hero-image-card" id="heroImageCard">
+          <div class="card-glow"></div>
+          <audio id="heroAudio" src="speech.mp3" preload="auto"></audio>
+          <video id="heroVideo" autoplay loop muted playsinline class="hero-video">
+            <source src="video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <!-- Floating Glassmorphic Audio Control -->
+          <button id="audioToggleBtn" class="audio-toggle-btn muted" aria-label="Play Voiceover" title="Play Voiceover">
+            <div class="audio-btn-glow"></div>
+            <div class="icon-wrapper">
+              <i data-lucide="volume-x" class="icon-mute"></i>
+              <i data-lucide="volume-2" class="icon-unmute"></i>
+            </div>
+            <!-- Premium active visualizer waves -->
+            <div class="btn-audio-waves">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </button>
+        </div>
       </div>
-      <p class="hero-tagline">
-        CSE undergraduate building scalable backend systems &amp; full-stack applications.<br />
-        Passionate about clean code, databases, and solving real-world problems.
-      </p>
-      <div class="hero-cta-group">
-        <a href="#projects" class="btn-primary">View My Work</a>
-        <a href="mailto:alapakaramesh43@gmail.com" class="btn-outline">Get In Touch</a>
-      </div>
-      <div class="hero-socials">
-        <a href="https://github.com/alapakaramesh" target="_blank" rel="noopener" aria-label="GitHub" class="social-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
-        </a>
-        <a href="https://linkedin.com/in/rock-kala-88494732b" target="_blank" rel="noopener" aria-label="LinkedIn" class="social-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-        </a>
-        <a href="mailto:alapakaramesh43@gmail.com" aria-label="Email" class="social-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-        </a>
+
+      <!-- Bottom: Hero Text -->
+      <div class="hero-text-content">
+        <div class="hero-badge">👋 Available for Opportunities</div>
+        <h1 class="hero-greet">Hi, I'm</h1>
+        <h1 class="hero-name">Alapaka Venkata Ramesh</h1>
+        <div class="hero-role">
+          <span class="role-prefix">I'm a </span>
+          <span class="typewriter" id="typewriter"></span>
+        </div>
+        <p class="hero-tagline">
+          Building scalable web applications with Java, SQL and modern web technologies.
+        </p>
+        <div class="hero-cta-group">
+          <a href="#projects" class="btn-primary"><i data-lucide="folder-git-2"></i> View Projects</a>
+          <a href="#contact" class="btn-outline"><i data-lucide="send"></i> Contact Me</a>
+          <a href="#" class="btn-secondary" id="downloadResume"><i data-lucide="download"></i> Download Resume</a>
+        </div>
+        <div class="hero-socials">
+          <a href="https://github.com/alapakaramesh43-a11y" target="_blank" rel="noopener" aria-label="GitHub" class="social-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-github"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+          </a>
+          <a href="https://linkedin.com/in/rock-kala-88494732b" target="_blank" rel="noopener" aria-label="LinkedIn" class="social-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-linkedin"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
+          <a href="mailto:alapakaramesh43@gmail.com" aria-label="Email" class="social-icon">
+            <i data-lucide="mail"></i>
+          </a>
+        </div>
       </div>
     </div>
 
@@ -92,16 +122,15 @@
             <div class="id-badge">
               <div class="badge-hole-wrap"><div class="badge-hole"></div></div>
               <div class="badge-avatar">
-                <img src="profile.jpg" alt="Alapaka Venkata Ramesh" class="avatar-photo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
-              <div class="avatar-placeholder" style="display:none">
-                <span>AVR</span>
-              </div>
+                <div class="avatar-placeholder">
+                  <span>AVR</span>
+                </div>
               </div>
               <div class="badge-info">
                 <h3 class="badge-name">Alapaka V. Ramesh</h3>
                 <p class="badge-role">Full Stack Developer</p>
                 <div class="badge-divider"></div>
-                <div class="badge-detail"><span class="badge-label">Institute</span><span class="badge-value">VIT Chennai</span></div>
+                <div class="badge-detail"><span class="badge-label">Institute</span><span class="badge-value">Velammal IT</span></div>
                 <div class="badge-detail"><span class="badge-label">Batch</span><span class="badge-value">2027</span></div>
                 <div class="badge-detail"><span class="badge-label">CGPA</span><span class="badge-value">8.2 / 10</span></div>
                 <div class="badge-tag">CSE Undergraduate</div>
@@ -114,10 +143,10 @@
         <div class="about-bio-col" data-aos="fade-left">
           <h3 class="about-title">Building <span class="accent">Scalable</span> Solutions</h3>
           <p class="about-text">
-            I'm a Computer Science Engineering undergraduate at Velammal Institute of Technology, graduating in 2027. With a strong foundation in <strong>Java, Python, SQL</strong>, and backend development, I specialize in building full-stack applications with clean, maintainable architecture.
+            I am a Computer Science Engineering undergraduate graduating in 2027 with strong skills in Java, Python, SQL, HTML, CSS and backend development. I enjoy building scalable full-stack applications, solving real-world problems, and continuously learning modern software technologies.
           </p>
           <p class="about-text">
-            Through my internship at <strong>IBM Academic Internship Program</strong>, I gained hands-on experience with backend modules, relational databases, and collaborative development using Git. I'm driven by the challenge of solving complex problems with elegant, efficient code.
+            Through my academic and internship projects, I focus on constructing robust backend systems, designing structured relational databases, and writing optimized logic to deliver exceptional, responsive user experiences.
           </p>
           <div class="about-stats">
             <div class="stat-card">
@@ -125,20 +154,20 @@
               <span class="stat-label">CGPA</span>
             </div>
             <div class="stat-card">
-              <span class="stat-num">1+</span>
-              <span class="stat-label">Year Exp.</span>
+              <span class="stat-num">1</span>
+              <span class="stat-label">Internship</span>
             </div>
             <div class="stat-card">
               <span class="stat-num">2</span>
-              <span class="stat-label">Certs</span>
+              <span class="stat-label">Certifications</span>
             </div>
             <div class="stat-card">
               <span class="stat-num">1</span>
-              <span class="stat-label">Projects</span>
+              <span class="stat-label">Featured Projects</span>
             </div>
           </div>
           <div class="about-actions">
-            <a href="mailto:alapakaramesh43@gmail.com" class="btn-primary">Let's Connect</a>
+            <a href="mailto:alapakaramesh43@gmail.com" class="btn-primary"><i data-lucide="mail"></i> Let's Connect</a>
             <div class="about-contact-info">
               <span>📞 8328163049</span>
               <span>📍 Chennai, India</span>
@@ -157,50 +186,61 @@
         <h2 class="section-title">Technical <span class="accent">Skills</span></h2>
       </div>
 
-      <div class="skills-grid" data-aos="fade-up" data-aos-delay="100">
-
-        <div class="skill-category">
-          <h3 class="skill-cat-title"><span class="skill-icon">💻</span> Languages</h3>
+      <div class="skills-cards-grid" data-aos="fade-up" data-aos-delay="100">
+        <!-- Programming Card -->
+        <div class="skill-category-card">
+          <div class="skill-card-glow"></div>
+          <h3 class="skill-cat-title"><i data-lucide="code-2" class="skill-icon"></i> Programming</h3>
           <div class="skill-pills">
             <div class="skill-pill"><span class="pill-icon java"></span>Java</div>
             <div class="skill-pill"><span class="pill-icon python"></span>Python</div>
             <div class="skill-pill"><span class="pill-icon c-lang"></span>C</div>
             <div class="skill-pill"><span class="pill-icon sql"></span>SQL</div>
+          </div>
+        </div>
+
+        <!-- Frontend Card -->
+        <div class="skill-category-card">
+          <div class="skill-card-glow"></div>
+          <h3 class="skill-cat-title"><i data-lucide="monitor" class="skill-icon"></i> Frontend</h3>
+          <div class="skill-pills">
             <div class="skill-pill"><span class="pill-icon html"></span>HTML</div>
             <div class="skill-pill"><span class="pill-icon css"></span>CSS</div>
           </div>
         </div>
 
-        <div class="skill-category">
-          <h3 class="skill-cat-title"><span class="skill-icon">🗄️</span> Backend & Database</h3>
+        <!-- Backend Card -->
+        <div class="skill-category-card">
+          <div class="skill-card-glow"></div>
+          <h3 class="skill-cat-title"><i data-lucide="server" class="skill-icon"></i> Backend</h3>
           <div class="skill-pills">
+            <div class="skill-pill"><span class="pill-icon crud"></span>CRUD Operations</div>
+            <div class="skill-pill"><span class="pill-icon sql"></span>SQL</div>
             <div class="skill-pill"><span class="pill-icon mongo"></span>MongoDB</div>
-            <div class="skill-pill"><span class="pill-icon mysql"></span>MySQL / SQL</div>
-            <div class="skill-pill"><span class="pill-icon crud"></span>CRUD Ops</div>
-            <div class="skill-pill"><span class="pill-icon joins"></span>Joins & Agg.</div>
           </div>
         </div>
 
-        <div class="skill-category">
-          <h3 class="skill-cat-title"><span class="skill-icon">🧠</span> Concepts</h3>
-          <div class="skill-pills">
-            <div class="skill-pill">Data Structures</div>
-            <div class="skill-pill">Algorithms</div>
-            <div class="skill-pill">Problem Solving</div>
-            <div class="skill-pill">OOP</div>
-          </div>
-        </div>
-
-        <div class="skill-category">
-          <h3 class="skill-cat-title"><span class="skill-icon">🛠️</span> Tools & Platforms</h3>
+        <!-- Tools Card -->
+        <div class="skill-category-card">
+          <div class="skill-card-glow"></div>
+          <h3 class="skill-cat-title"><i data-lucide="wrench" class="skill-icon"></i> Tools</h3>
           <div class="skill-pills">
             <div class="skill-pill"><span class="pill-icon git"></span>Git</div>
             <div class="skill-pill"><span class="pill-icon github"></span>GitHub</div>
             <div class="skill-pill"><span class="pill-icon vscode"></span>VS Code</div>
-            <div class="skill-pill">Version Control</div>
           </div>
         </div>
 
+        <!-- Concepts Card -->
+        <div class="skill-category-card">
+          <div class="skill-card-glow"></div>
+          <h3 class="skill-cat-title"><i data-lucide="brain" class="skill-icon"></i> Concepts</h3>
+          <div class="skill-pills">
+            <div class="skill-pill">Data Structures</div>
+            <div class="skill-pill">OOP</div>
+            <div class="skill-pill">Problem Solving</div>
+          </div>
+        </div>
       </div>
 
       <!-- Proficiency bars -->
@@ -246,19 +286,21 @@
                 <h3 class="tc-role">Software Development Intern</h3>
                 <p class="tc-company">🏢 IBM Academic Internship Program</p>
               </div>
-              <span class="tc-date">2024 – 2025</span>
+              <span class="tc-date">Academic Year 2024–25</span>
             </div>
             <div class="tc-tags">
               <span class="tc-tag">Java</span>
               <span class="tc-tag">SQL</span>
               <span class="tc-tag">Git</span>
               <span class="tc-tag">Backend</span>
+              <span class="tc-tag">Relational Databases</span>
             </div>
             <ul class="tc-points">
-              <li>Built and maintained backend modules using <strong>Java</strong> and <strong>SQL</strong> for clean, modular code architecture.</li>
-              <li>Performed database operations including schema design, CRUD queries, and join-based data retrieval.</li>
-              <li>Practiced version control using <strong>Git</strong> — branching, committing, and merging in collaborative team workflow.</li>
-              <li>Gained exposure to collaborative development and software delivery fundamentals.</li>
+              <li>Built backend modules using <strong>Java</strong> and <strong>SQL</strong>.</li>
+              <li>Implemented <strong>CRUD operations</strong> for menu tracking and database administration.</li>
+              <li>Designed normalized <strong>relational databases</strong> to manage information schemas.</li>
+              <li>Used <strong>Git</strong> for version control and code collaboration.</li>
+              <li>Worked in collaborative software development environments.</li>
             </ul>
           </div>
         </div>
@@ -280,33 +322,41 @@
           <div class="project-top">
             <div class="project-icon">🍽️</div>
             <div class="project-links">
-              <a href="https://github.com/alapakaramesh43-a11y/foody" target="_blank" rel="noopener" class="project-link" aria-label="GitHub Repo">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+              <a href="https://github.com/alapakaramesh43-a11y/foody-campus-canteen" target="_blank" rel="noopener" class="project-link" aria-label="GitHub Repo">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-github"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
               </a>
             </div>
           </div>
           <div class="featured-badge">Featured Project</div>
           <h3 class="project-title">Foody</h3>
-          <p class="project-subtitle">Full-Stack Food Management Application</p>
+          <p class="project-subtitle">Full Stack Food Management Application</p>
           <p class="project-desc">
-            A comprehensive food management platform supporting menu browsing, ordering, and item management across multiple food categories. Built with a Java backend handling CRUD operations for menu items and user orders via a normalized SQL database.
+            A comprehensive canteen order and food management application. Built with an object-oriented Java backend handling system processes, CRUD operations, and SQL database operations to deliver a responsive food management interface.
           </p>
           <div class="project-highlights">
             <div class="highlight-item">
-              <span class="h-icon">⚡</span>
-              <span>Relational DB schema with normalized tables</span>
+              <span class="h-icon">🍔</span>
+              <span>Menu browsing and category listing</span>
+            </div>
+            <div class="highlight-item">
+              <span class="h-icon">🛒</span>
+              <span>Food ordering workflow and state tracking</span>
             </div>
             <div class="highlight-item">
               <span class="h-icon">🔄</span>
-              <span>SQL joins &amp; aggregations for order tracking</span>
+              <span>CRUD operations for canteen administrators</span>
             </div>
             <div class="highlight-item">
-              <span class="h-icon">🏗️</span>
-              <span>OOP: Encapsulation &amp; Inheritance in backend</span>
+              <span class="h-icon">🗄️</span>
+              <span>SQL database for schema storage</span>
             </div>
             <div class="highlight-item">
-              <span class="h-icon">🌐</span>
-              <span>Responsive HTML/CSS web interface</span>
+              <span class="h-icon">📱</span>
+              <span>Responsive user interface</span>
+            </div>
+            <div class="highlight-item">
+              <span class="h-icon">☕</span>
+              <span>Object-oriented backend design in Java</span>
             </div>
           </div>
           <div class="project-tech">
@@ -314,10 +364,9 @@
             <span class="tech-badge">SQL</span>
             <span class="tech-badge">HTML</span>
             <span class="tech-badge">CSS</span>
-            <span class="tech-badge">CRUD</span>
           </div>
-          <a href="https://github.com/alapakaramesh43-a11y/foody" target="_blank" rel="noopener" class="project-cta">
-            View on GitHub →
+          <a href="https://github.com/alapakaramesh43-a11y/foody-campus-canteen" target="_blank" rel="noopener" class="project-cta-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-github"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg> View on GitHub
           </a>
         </div>
       </div>
@@ -332,85 +381,19 @@
         <h2 class="section-title">My <span class="accent">Education</span></h2>
       </div>
 
-      <div class="edu-grid">
-
-        <div class="edu-card" data-aos="fade-up" data-aos-delay="0">
+      <div class="edu-grid-solo">
+        <div class="edu-card-premium" data-aos="fade-up">
+          <div class="premium-glow"></div>
           <div class="edu-icon-wrap">
             <span class="edu-emoji">🎓</span>
           </div>
           <div class="edu-info">
-            <span class="edu-degree">B.E. Computer Science &amp; Engineering</span>
+            <span class="edu-degree">B.E. Computer Science Engineering</span>
             <span class="edu-school">Velammal Institute of Technology</span>
-            <span class="edu-year">Expected Jan 2027</span>
+            <span class="edu-year">Expected Graduation: 2027</span>
             <div class="edu-score">
               <span class="score-label">CGPA</span>
               <span class="score-val">8.2 / 10</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="edu-card" data-aos="fade-up" data-aos-delay="100">
-          <div class="edu-icon-wrap">
-            <span class="edu-emoji">📚</span>
-          </div>
-          <div class="edu-info">
-            <span class="edu-degree">Intermediate (MPC)</span>
-            <span class="edu-school">RNR College</span>
-            <span class="edu-year">Jan 2022</span>
-            <div class="edu-score">
-              <span class="score-label">GPA</span>
-              <span class="score-val">9.4 / 10</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="edu-card" data-aos="fade-up" data-aos-delay="200">
-          <div class="edu-icon-wrap">
-            <span class="edu-emoji">🏫</span>
-          </div>
-          <div class="edu-info">
-            <span class="edu-degree">SSC (10th Grade)</span>
-            <span class="edu-school">Sri Chaitanya English Medium School</span>
-            <span class="edu-year">Jan 2020</span>
-            <div class="edu-score">
-              <span class="score-label">GPA</span>
-              <span class="score-val">89.83%</span>
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-      <!-- Certifications -->
-      <div class="certs-wrap" data-aos="fade-up">
-        <h3 class="certs-title">Certifications &amp; Activities</h3>
-        <div class="certs-grid">
-          <div class="cert-card">
-            <span class="cert-icon">🏆</span>
-            <div>
-              <span class="cert-name">C Programming</span>
-              <span class="cert-issuer">Certified Course</span>
-            </div>
-          </div>
-          <div class="cert-card">
-            <span class="cert-icon">🤖</span>
-            <div>
-              <span class="cert-name">AI Fundamentals</span>
-              <span class="cert-issuer">Certified Course</span>
-            </div>
-          </div>
-          <div class="cert-card">
-            <span class="cert-icon">💡</span>
-            <div>
-              <span class="cert-name">Coding Club</span>
-              <span class="cert-issuer">Active Member — DSA & Competitive Programming</span>
-            </div>
-          </div>
-          <div class="cert-card">
-            <span class="cert-icon">📱</span>
-            <div>
-              <span class="cert-name">App Dev Club</span>
-              <span class="cert-issuer">Active Member — Software Development Workshops</span>
             </div>
           </div>
         </div>
@@ -418,8 +401,42 @@
     </div>
   </section>
 
+  <!-- ═══════════════ CERTIFICATIONS ═══════════════ -->
+  <section id="certifications" class="section section-alt">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-tag">Credentials</span>
+        <h2 class="section-title">Certifications</h2>
+      </div>
+
+      <div class="certs-grid" data-aos="fade-up">
+        <div class="cert-card-interactive">
+          <div class="cert-card-glow"></div>
+          <div class="cert-icon-wrap">
+            <i data-lucide="award" class="cert-icon-svg"></i>
+          </div>
+          <div class="cert-content">
+            <h4 class="cert-title-text">C Programming</h4>
+            <p class="cert-description">Professional certification covering core logic, data structures, and algorithms in C.</p>
+          </div>
+        </div>
+
+        <div class="cert-card-interactive">
+          <div class="cert-card-glow"></div>
+          <div class="cert-icon-wrap">
+            <i data-lucide="cpu" class="cert-icon-svg"></i>
+          </div>
+          <div class="cert-content">
+            <h4 class="cert-title-text">Artificial Intelligence Fundamentals</h4>
+            <p class="cert-description">Certified credentials focusing on neural networks, ML concepts, and foundational AI systems.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ═══════════════ CONTACT ═══════════════ -->
-  <section id="contact" class="section section-alt">
+  <section id="contact" class="section">
     <div class="container">
       <div class="section-header" data-aos="fade-up">
         <span class="section-tag">Get In Touch</span>
@@ -428,27 +445,26 @@
       </div>
 
       <div class="contact-grid">
-
         <!-- Info -->
         <div class="contact-info" data-aos="fade-right">
           <h3 class="contact-heading">Reach Out Directly</h3>
           <div class="contact-items">
             <a href="mailto:alapakaramesh43@gmail.com" class="contact-item">
-              <div class="ci-icon">✉️</div>
+              <div class="ci-icon"><i data-lucide="mail"></i></div>
               <div class="ci-text">
                 <span class="ci-label">Email</span>
                 <span class="ci-value">alapakaramesh43@gmail.com</span>
               </div>
             </a>
             <a href="tel:8328163049" class="contact-item">
-              <div class="ci-icon">📞</div>
+              <div class="ci-icon"><i data-lucide="phone"></i></div>
               <div class="ci-text">
                 <span class="ci-label">Phone</span>
-                <span class="ci-value">+91 8328163049</span>
+                <span class="ci-value">8328163049</span>
               </div>
             </a>
             <div class="contact-item no-link">
-              <div class="ci-icon">📍</div>
+              <div class="ci-icon"><i data-lucide="map-pin"></i></div>
               <div class="ci-text">
                 <span class="ci-label">Location</span>
                 <span class="ci-value">Chennai, India</span>
@@ -456,13 +472,11 @@
             </div>
           </div>
           <div class="contact-socials">
-            <a href="https://github.com/alapakaramesh" target="_blank" rel="noopener" class="cs-btn">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
-              GitHub
+            <a href="https://github.com/alapakaramesh43-a11y" target="_blank" rel="noopener" class="cs-btn">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-github"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg> GitHub
             </a>
             <a href="https://linkedin.com/in/rock-kala-88494732b" target="_blank" rel="noopener" class="cs-btn">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-              LinkedIn
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-linkedin"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg> LinkedIn
             </a>
           </div>
         </div>
@@ -493,7 +507,6 @@
           </button>
           <p class="form-success" id="formSuccess">✅ Thanks! I'll get back to you soon.</p>
         </form>
-
       </div>
     </div>
   </section>
@@ -503,9 +516,9 @@
     <div class="container">
       <div class="footer-inner">
         <span class="footer-logo">AVR<span class="accent">.</span></span>
-        <p class="footer-copy">© 2025 Alapaka Venkata Ramesh. Crafted with ❤️ &amp; lots of ☕</p>
+        <p class="footer-copy">&copy; 2026 Alapaka Venkata Ramesh. All rights reserved.</p>
         <div class="footer-links">
-          <a href="https://github.com/alapakaramesh" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://github.com/alapakaramesh43-a11y" target="_blank" rel="noopener">GitHub</a>
           <a href="https://linkedin.com/in/rock-kala-88494732b" target="_blank" rel="noopener">LinkedIn</a>
           <a href="mailto:alapakaramesh43@gmail.com">Email</a>
         </div>

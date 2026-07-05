@@ -1,6 +1,13 @@
 /* ═══════════════════════════════════════════════════════
    PORTFOLIO SCRIPT — Alapaka Venkata Ramesh
-═══════════════════════════════════════════════════════ */
+   ═══════════════════════════════════════════ */
+
+// Initialize Lucide Icons
+document.addEventListener('DOMContentLoaded', () => {
+  if (typeof lucide !== 'undefined') {
+    lucide.createIcons();
+  }
+});
 
 /* ── Navbar: scroll behaviour + active link ── */
 const navbar = document.getElementById('navbar');
@@ -8,7 +15,7 @@ const navLinks = document.querySelectorAll('.nav-link');
 const sections = document.querySelectorAll('section[id]');
 
 window.addEventListener('scroll', () => {
-  // Add glass effect on scroll
+  // Add frosted glass effect on scroll
   if (window.scrollY > 60) {
     navbar.classList.add('scrolled');
   } else {
@@ -18,7 +25,7 @@ window.addEventListener('scroll', () => {
   // Highlight active section in nav
   let current = '';
   sections.forEach(section => {
-    if (window.scrollY >= section.offsetTop - 100) {
+    if (window.scrollY >= section.offsetTop - 120) {
       current = section.getAttribute('id');
     }
   });
@@ -36,12 +43,17 @@ const navLinksEl = document.getElementById('navLinks');
 
 hamburger.addEventListener('click', () => {
   navLinksEl.classList.toggle('open');
-});
-navLinksEl.querySelectorAll('a').forEach(link => {
-  link.addEventListener('click', () => navLinksEl.classList.remove('open'));
+  hamburger.classList.toggle('active');
 });
 
-/* ── Hero Canvas Particle Animation ── */
+navLinksEl.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    navLinksEl.classList.remove('open');
+    hamburger.classList.remove('active');
+  });
+});
+
+/* ── Hero Canvas Particle Animation (Red Accent Theme) ── */
 const canvas = document.getElementById('heroCanvas');
 const ctx = canvas.getContext('2d');
 let particles = [];
@@ -54,8 +66,9 @@ function resizeCanvas() {
 resizeCanvas();
 window.addEventListener('resize', resizeCanvas);
 
-const PARTICLE_COUNT = 90;
-const colors = ['rgba(0,212,255,', 'rgba(123,47,247,', 'rgba(0,153,255,'];
+const PARTICLE_COUNT = 80;
+// Particle colors matching #FF3B30
+const colors = ['rgba(255, 59, 48, ', 'rgba(255, 94, 58, ', 'rgba(230, 57, 70, '];
 
 class Particle {
   constructor() { this.reset(); }
@@ -64,9 +77,9 @@ class Particle {
     this.y = Math.random() * canvas.height;
     this.size = Math.random() * 2 + 0.3;
     this.color = colors[Math.floor(Math.random() * colors.length)];
-    this.opacity = Math.random() * 0.6 + 0.1;
-    this.vx = (Math.random() - 0.5) * 0.35;
-    this.vy = (Math.random() - 0.5) * 0.35;
+    this.opacity = Math.random() * 0.5 + 0.1;
+    this.vx = (Math.random() - 0.5) * 0.3;
+    this.vy = (Math.random() - 0.5) * 0.3;
     this.life = Math.random() * 200 + 100;
     this.maxLife = this.life;
   }
@@ -96,13 +109,13 @@ function drawConnections() {
       const dx = particles[i].x - particles[j].x;
       const dy = particles[i].y - particles[j].y;
       const dist = Math.sqrt(dx * dx + dy * dy);
-      if (dist < 100) {
-        const alpha = (1 - dist / 100) * 0.12;
+      if (dist < 110) {
+        const alpha = (1 - dist / 110) * 0.1;
         ctx.beginPath();
         ctx.moveTo(particles[i].x, particles[i].y);
         ctx.lineTo(particles[j].x, particles[j].y);
-        ctx.strokeStyle = `rgba(0,212,255,${alpha})`;
-        ctx.lineWidth = 0.6;
+        ctx.strokeStyle = `rgba(255, 59, 48, ${alpha})`;
+        ctx.lineWidth = 0.5;
         ctx.stroke();
       }
     }
@@ -126,8 +139,8 @@ function animateParticles() {
     const dy = p.y - mouseY;
     const dist = Math.sqrt(dx * dx + dy * dy);
     if (dist < 80) {
-      p.x += (dx / dist) * 0.6;
-      p.y += (dy / dist) * 0.6;
+      p.x += (dx / dist) * 0.5;
+      p.y += (dy / dist) * 0.5;
     }
     p.update();
     p.draw();
@@ -142,11 +155,10 @@ animateParticles();
 
 /* ── Typewriter Effect ── */
 const roles = [
+  'Computer Science Engineering Student',
   'Full Stack Developer',
-  'Backend Engineer',
-  'Problem Solver',
   'Java Developer',
-  'DB Enthusiast'
+  'Backend Engineer'
 ];
 let roleIdx = 0, charIdx = 0, deleting = false, typePause = false;
 const typeEl = document.getElementById('typewriter');
@@ -160,10 +172,10 @@ function type() {
     charIdx++;
     if (charIdx === currentRole.length) {
       typePause = true;
-      setTimeout(() => { deleting = true; typePause = false; }, 2000);
+      setTimeout(() => { deleting = true; typePause = false; type(); }, 2000);
       return;
     }
-    setTimeout(type, 90);
+    setTimeout(type, 80);
   } else {
     typeEl.textContent = currentRole.substring(0, charIdx - 1);
     charIdx--;
@@ -171,7 +183,7 @@ function type() {
       deleting = false;
       roleIdx = (roleIdx + 1) % roles.length;
     }
-    setTimeout(type, 45);
+    setTimeout(type, 40);
   }
 }
 setTimeout(type, 1000);
@@ -187,7 +199,7 @@ const aosObserver = new IntersectionObserver((entries) => {
       setTimeout(() => el.classList.add('aos-animate'), delay);
     }
   });
-}, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 
 aosElements.forEach(el => aosObserver.observe(el));
 
@@ -199,11 +211,11 @@ const barObserver = new IntersectionObserver((entries) => {
     if (entry.isIntersecting) {
       const bar = entry.target;
       const targetWidth = bar.getAttribute('data-width') + '%';
-      setTimeout(() => { bar.style.width = targetWidth; }, 200);
+      setTimeout(() => { bar.style.width = targetWidth; }, 150);
       barObserver.unobserve(bar);
     }
   });
-}, { threshold: 0.3 });
+}, { threshold: 0.2 });
 
 barFills.forEach(bar => barObserver.observe(bar));
 
@@ -224,8 +236,6 @@ function animateCounter(el, end, decimals = 0) {
 
     if (decimals > 0) {
       el.textContent = current.toFixed(decimals);
-    } else if (el.dataset.suffix) {
-      el.textContent = Math.floor(current) + el.dataset.suffix;
     } else {
       el.textContent = Math.floor(current);
     }
@@ -240,14 +250,17 @@ const statObserver = new IntersectionObserver((entries) => {
     if (entry.isIntersecting) {
       const el = entry.target;
       const text = el.textContent.trim();
-      if (text === '8.2') animateCounter(el, 8.2, 1);
-      else if (text === '1+') { el.dataset.suffix = '+'; animateCounter(el, 1, 0); }
-      else if (text === '2') animateCounter(el, 2, 0);
-      else if (text === '1') animateCounter(el, 1, 0);
+      if (text === '8.2') {
+        animateCounter(el, 8.2, 1);
+      } else if (text === '1') {
+        animateCounter(el, 1, 0);
+      } else if (text === '2') {
+        animateCounter(el, 2, 0);
+      }
       statObserver.unobserve(el);
     }
   });
-}, { threshold: 0.5 });
+}, { threshold: 0.3 });
 
 statNums.forEach(el => statObserver.observe(el));
 
@@ -263,7 +276,7 @@ function handleFormSubmit(e) {
   btnLoader.style.display = 'inline';
   btn.disabled = true;
 
-  // Simulate async — swap with real form service (Formspree, EmailJS etc.)
+  // Simulate async form submit
   setTimeout(() => {
     btnText.style.display = 'inline';
     btnLoader.style.display = 'none';
@@ -290,12 +303,30 @@ if (badge) {
     const rect = badge.getBoundingClientRect();
     const cx = rect.left + rect.width / 2;
     const cy = rect.top + rect.height / 2;
-    const rx = ((e.clientY - cy) / rect.height) * 10;
-    const ry = -((e.clientX - cx) / rect.width) * 10;
+    const rx = ((e.clientY - cy) / rect.height) * 12;
+    const ry = -((e.clientX - cx) / rect.width) * 12;
     badge.style.transform = `perspective(600px) rotateX(${rx}deg) rotateY(${ry}deg)`;
   });
   badge.addEventListener('mouseleave', () => {
     badge.style.transform = 'perspective(600px) rotateX(0) rotateY(0) rotate(-2deg)';
+  });
+}
+
+/* ── Hero Image Card slight tilt on mouse move (Premium Interaction) ── */
+const heroCard = document.getElementById('heroImageCard');
+if (heroCard) {
+  heroCard.addEventListener('mousemove', (e) => {
+    const rect = heroCard.getBoundingClientRect();
+    const cx = rect.left + rect.width / 2;
+    const cy = rect.top + rect.height / 2;
+    // Cap at a subtle 8 degrees tilt
+    const rx = ((e.clientY - cy) / rect.height) * 8;
+    const ry = -((e.clientX - cx) / rect.width) * 8;
+    heroCard.style.transform = `perspective(1000px) rotateX(${rx}deg) rotateY(${ry}deg) scale(1.02)`;
+  });
+  heroCard.style.transformStyle = "preserve-3d";
+  heroCard.addEventListener('mouseleave', () => {
+    heroCard.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale(1)';
   });
 }
 
@@ -305,5 +336,77 @@ document.querySelector('.nav-logo').addEventListener('click', (e) => {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 });
 
-console.log('%c👋 Hey! Thanks for checking the source.', 'color:#00d4ff;font-size:14px;font-weight:bold;');
-console.log('%c Built by Alapaka Venkata Ramesh', 'color:#7b2ff7;font-size:12px;');
+/* ── Dummy Resume download action trigger ── */
+const resumeBtn = document.getElementById('downloadResume');
+if (resumeBtn) {
+  resumeBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    alert('Resume download triggered (dummy link). In production, point this to your actual resume.pdf file.');
+  });
+}
+
+/* ── Hero Video Speech Audio & Synchronization ── */
+const heroVideo = document.getElementById('heroVideo');
+const heroAudio = document.getElementById('heroAudio');
+const audioToggleBtn = document.getElementById('audioToggleBtn');
+
+function toggleSpeech() {
+  if (!heroAudio) return;
+  
+  if (heroAudio.paused) {
+    heroAudio.play()
+      .then(() => {
+        if (audioToggleBtn) {
+          audioToggleBtn.classList.remove('muted');
+          audioToggleBtn.classList.add('playing');
+          audioToggleBtn.setAttribute('aria-label', 'Pause Voiceover');
+          audioToggleBtn.setAttribute('title', 'Pause Voiceover');
+        }
+        
+        // Ensure video is playing and synchronized from start when speech begins
+        if (heroVideo) {
+          heroVideo.currentTime = 0;
+          heroVideo.play().catch(e => console.log('Video play interrupted:', e));
+        }
+      })
+      .catch(err => {
+        console.error('Audio playback failed:', err);
+      });
+  } else {
+    heroAudio.pause();
+    resetSpeechState();
+  }
+}
+
+function resetSpeechState() {
+  if (audioToggleBtn) {
+    audioToggleBtn.classList.remove('playing');
+    audioToggleBtn.classList.add('muted');
+    audioToggleBtn.setAttribute('aria-label', 'Play Voiceover');
+    audioToggleBtn.setAttribute('title', 'Play Voiceover');
+  }
+}
+
+if (audioToggleBtn) {
+  audioToggleBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    toggleSpeech();
+  });
+}
+
+if (heroVideo) {
+  heroVideo.style.cursor = 'pointer';
+  heroVideo.addEventListener('click', (e) => {
+    e.stopPropagation();
+    toggleSpeech();
+  });
+}
+
+if (heroAudio) {
+  heroAudio.addEventListener('ended', () => {
+    resetSpeechState();
+  });
+}
+
+console.log('%c👋 Portfolio Website script loaded successfully.', 'color:#FF3B30;font-size:14px;font-weight:bold;');
+console.log('%c Built for Alapaka Venkata Ramesh', 'color:#FF5E3A;font-size:12px;');
